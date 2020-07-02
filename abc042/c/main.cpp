@@ -2,35 +2,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int GetDigit(int num) { return log10(num) + 1; }
+#define ll long long
+#define PI acos(-1.0)
+#define FOR(I, A, B) for (int I = (A); I < (B); ++I)
 
 int main() {
-  long int N, K, i, n, count, Ntmp;
-  bool flag = false;
+  int N;
+  int K;
   cin >> N >> K;
-  vector<long int> D(K);
-  vector<long int> num(10 - K);
-  for (i = 0; i < K; i++) cin >> D[i];
-  Ntmp = n = N;
-  i = 2;
-  while (1) {
-    count = 0;
-    while (n > 0) {
-      // 入力されたDの中に、n%10がなかった場合count++する
-      if (find(D.begin(), D.end(), n % 10) == D.end()) {
-        count++;
-        // countがDと同じ大きさになった時点で発見
-        if (count == GetDigit(N)) {
-          flag = true;
-          break;
-        }
-      } else
-        break;
-      n /= 10;
-    }
-    // flagが立っていたらbreak
-    if (flag) break;
-    Ntmp = n = N * i++;
+  bool D[10];  //嫌な数字ならtrue
+  FOR(i, 0, 10) D[i] = false;
+  FOR(i, 0, K) {
+    int d;
+    cin >> d;
+    D[d] = true;
   }
-  cout << Ntmp << endl;
+  //全探索
+  FOR(i, 0, 10 * N) {
+    if (N <= i) {
+      int check = true;
+      string s = to_string(i);
+      FOR(j, 0, s.length()) {
+        if (D[s[j] - '0']) check = false;
+      }
+      if (check) {
+        cout << i << endl;
+        return 0;
+      }
+    }
+  }
 }
