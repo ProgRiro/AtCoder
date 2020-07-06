@@ -99,4 +99,43 @@ void stringFunc() {
   cout << s1 << endl;
 }
 
-int main() { stringFunc(); }
+void bitFunc() {
+  // 左シフト
+  cout << (1 << 0) << endl;
+  cout << (1 << 1) << endl;
+  cout << (1 << 2) << endl;
+  cout << (1 << 3) << endl;
+  // 右シフト
+  cout << (1 >> 0) << endl;
+  cout << (1 >> 1) << endl;
+  cout << (1 >> 2) << endl;
+  cout << (1 >> 3) << endl;
+  cout << endl;
+  // 左シフト
+  cout << (2 << 0) << endl;
+  cout << (2 << 1) << endl;
+  cout << (2 << 2) << endl;
+  cout << (2 << 3) << endl;
+  // 右シフト
+  cout << (2 >> 0) << endl;
+  cout << (2 >> 1) << endl;
+  cout << (2 >> 2) << endl;
+  cout << (2 >> 3) << endl;
+  cout << endl;
+  // 左シフト
+  cout << (3 << 0) << endl;
+  cout << (3 << 1) << endl;
+  cout << (3 << 2) << endl;
+  cout << (3 << 3) << endl;
+  // 右シフト
+  cout << (3 >> 0) << endl;
+  cout << (3 >> 1) << endl;
+  cout << (3 >> 2) << endl;
+  cout << (3 >> 3) << endl;
+  cout << endl;
+}
+
+int main() {
+  // stringFunc();
+  bitFunc();
+}
