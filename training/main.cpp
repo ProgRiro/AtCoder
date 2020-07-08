@@ -133,6 +133,12 @@ void bitFunc() {
   cout << (3 >> 2) << endl;
   cout << (3 >> 3) << endl;
   cout << endl;
+  // 右シフト
+  cout << (3 >> 0) % 2 << endl;
+  cout << (3 >> 1) % 2 << endl;
+  cout << (3 >> 2) % 2 << endl;
+  cout << (3 >> 3) % 2 << endl;
+  cout << endl;
 }
 
 int main() {
