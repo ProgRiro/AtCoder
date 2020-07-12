@@ -8,8 +8,11 @@ using namespace std;
 #define FOR(I, A, B) for (int I = (A); I < (B); ++I)
 
 int main() {
-  int a1, a2, a3;
-  cin >> a1 >> a2 >> a3;
-
-  cout << (a1 + a2 + a3 >= 22 ? "bust" : "win") << endl;
+  string s;
+  cin >> s;
+  int len = s.length();
+  int cnt = 0;
+  for (int i = 0; i < len / 2; ++i)
+    if (s[i] != s[len - i - 1]) cnt++;
+  cout << cnt << endl;
 }
